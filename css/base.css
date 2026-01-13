@@ -1,0 +1,463 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background: #0b0b0f;
+    color: #eaeaf0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    overflow: hidden;
+    /* locked by default */
+}
+
+#app {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    padding: 24px;
+}
+
+/* Transition states */
+
+.screen-enter {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+}
+
+.screen-active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.screen-exit {
+    opacity: 0;
+    transform: translateY(-12px) scale(1.02);
+}
+
+/* Unlock scroll only on landing page later */
+body.unlocked {
+    overflow: auto;
+}
+/* Access Denied screen */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    /* fixed: was "0 px" */
+    min-height: 100vh;
+    background-color: black;
+    color: white;
+    font-family: "Space Grotesk", system-ui, sans-serif;
+}
+
+
+.content {
+    text-align: center;
+    max-width: 520px;
+    width: 100%;
+}
+
+/* Typography */
+
+h1 {
+    margin-bottom: 12px;
+    font-weight: 700;
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    font-family: "Space Mono", monospace;
+    letter-spacing: 0.12em;
+}
+
+.sub {
+    margin: 0 auto 6px;
+    max-width: 42ch;
+    font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+    line-height: 1.5;
+}
+
+.error {
+    margin-top: 6px;
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    font-weight: bold;
+}
+
+/* Button */
+
+button {
+    margin-top: 20px;
+    padding: 10px 18px;
+    font-weight: 700;
+    background-color: black;
+    color: aliceblue;
+    font-size: clamp(0.85rem, 2.5vw, 1rem);
+    border: 2px solid white;
+    border-radius: 12px;
+    font-family: "Space Mono", monospace;
+    cursor: pointer;
+    transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+    transform: translateY(-1px);
+}
+
+/* Tablet refinement */
+
+@media (max-width: 1024px) {
+    .content {
+        max-width: 460px;
+    }
+}
+
+/* Phone refinement */
+
+@media (max-width: 600px) {
+    .screen {
+        padding: 20px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+/* Verification screen */
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #0b0b0f;
+    color: #eaeaf0;
+    font-family: "Space Grotesk", system-ui, sans-serif;
+}
+
+
+.panel {
+    width: min(560px, 92vw);
+    background: radial-gradient(120% 120% at 50% 0%, #141420, #0f0f16);
+    border-radius: 20px;
+    padding: clamp(24px, 5vw, 40px);
+    text-align: center;
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.05),
+        0 30px 80px rgba(0, 0, 0, 0.6);
+}
+
+h1 {
+    font-family: "Space Mono", monospace;
+    font-size: clamp(1.4rem, 4vw, 1.9rem);
+    letter-spacing: 0.14em;
+    margin-bottom: 20px;
+}
+
+.question {
+    font-size: clamp(0.9rem, 2.6vw, 1rem);
+    margin-bottom: 24px;
+    line-height: 1.5;
+    color: #cfcfe8;
+}
+
+form {
+    display: grid;
+    gap: 16px;
+}
+
+input {
+    padding: 12px 14px;
+    background: #0b0b12;
+    border: 1px solid #3a3a55;
+    border-radius: 10px;
+    color: white;
+    font-size: 0.95rem;
+    outline: none;
+}
+
+input:focus {
+    border-color: #f3e7b3;
+    box-shadow: 0 0 0 2px rgba(243, 231, 179, 0.2);
+}
+
+button {
+    padding: 12px;
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    background: transparent;
+    color: #f3e7b3;
+    border: 1px solid #f3e7b3;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.15s ease;
+}
+
+button:hover {
+    background: #f3e7b3;
+    color: #000;
+    transform: translateY(-1px);
+}
+
+/* .hint {
+    margin-top: 16px;
+    font-size: 0.75rem;
+    color: #8f8fb0;
+    letter-spacing: 0.08em;
+} */
+
+/* Phone refinement */
+
+@media (max-width: 600px) {
+    button {
+        width: 100%;
+    }
+}
+/* Override screen */
+
+.progress-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#percentageCounter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(222, 116, 29, 1);
+    font-size: clamp(1rem, 3vw, 1.4rem);
+    font-family: system-ui, sans-serif;
+}
+
+/* keep all your SVG styles unchanged */
+
+.outer_circle,
+.outer_circle_bars_l,
+.outer_circle_bars_r,
+.inner_progress_circle,
+.inner_half_circle,
+.center_outer_circle,
+.center_inner_circle_second,
+.center_inner_circle_3,
+.center_inner_circle_3_dashed_verticle,
+.center_inner_circle_3_dashed,
+.center_inner_circle_2,
+.center_inner_circle_1,
+.center_inner_circle_0 {
+    fill: transparent;
+    stroke: rgba(222, 116, 29, 1);
+}
+
+.small_rectangles {
+    fill: rgba(222, 116, 29, 0.6);
+}
+
+.wobbling-element {
+    animation: wobble 4s ease-in-out infinite;
+    position: relative;
+}
+
+.status-text {
+    font-size: clamp(0.75rem, 2.5vw, 0.9rem);
+    letter-spacing: 0.12em;
+    color: #aaa;
+    text-transform: uppercase;
+}
+
+/* animations */
+
+@keyframes wobble {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(2px, -2px);
+    }
+
+    50% {
+        transform: translate(0, 2px);
+    }
+
+    75% {
+        transform: translate(-2px, -1px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+/* Authorization screen */
+
+.authorized-screen {
+    display: grid;
+    place-items: center;
+    height: 100%;
+}
+
+.auth-core {
+    position: relative;
+    display: grid;
+    place-items: center;
+    gap: 14px;
+}
+
+/* --- Rings --- */
+
+.rings {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 1px solid rgba(120, 255, 180, 0.3);
+    animation: spin 6s linear infinite;
+}
+
+.rings::before,
+.rings::after {
+    content: "";
+    position: absolute;
+    inset: 18px;
+    border-radius: 50%;
+    border: 1px dashed rgba(120, 255, 180, 0.25);
+    animation: spinReverse 10s linear infinite;
+}
+
+.rings::after {
+    inset: 40px;
+    border-style: solid;
+    opacity: 0.3;
+}
+
+/* --- Main text --- */
+
+.auth-box {
+    position: relative;
+    font-size: clamp(1.3rem, 4vw, 1.8rem);
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: #b9ffe0;
+    padding: 18px 26px;
+    border: 1px solid rgba(120, 255, 180, 0.35);
+    background: rgba(20, 40, 30, 0.45);
+    box-shadow: 0 0 25px rgba(120, 255, 180, 0.25);
+    text-transform: uppercase;
+}
+
+/* --- Glitch effect --- */
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    color: #7dffb3;
+    clip-path: inset(0 0 0 0);
+    opacity: 0.8;
+}
+
+.glitch::before {
+    transform: translate(1px, -1px);
+    animation: glitch1 1.8s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+    transform: translate(-1px, 1px);
+    animation: glitch2 1.4s infinite linear alternate-reverse;
+}
+
+.auth-sub {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: #8fd9b7;
+    opacity: 0.8;
+}
+
+/* --- Animations --- */
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spinReverse {
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes glitch1 {
+    0% {
+        clip-path: inset(20% 0 60% 0);
+    }
+
+    20% {
+        clip-path: inset(10% 0 75% 0);
+    }
+
+    40% {
+        clip-path: inset(40% 0 30% 0);
+    }
+
+    60% {
+        clip-path: inset(25% 0 50% 0);
+    }
+
+    80% {
+        clip-path: inset(15% 0 65% 0);
+    }
+
+    100% {
+        clip-path: inset(30% 0 40% 0);
+    }
+}
+
+@keyframes glitch2 {
+    0% {
+        clip-path: inset(65% 0 10% 0);
+    }
+
+    25% {
+        clip-path: inset(45% 0 25% 0);
+    }
+
+    50% {
+        clip-path: inset(70% 0 5% 0);
+    }
+
+    75% {
+        clip-path: inset(35% 0 40% 0);
+    }
+
+    100% {
+        clip-path: inset(55% 0 20% 0);
+    }
+}

@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #0b0b0f;
+    color: #eaeaf0;
+    font-family: "Space Grotesk", system-ui, sans-serif;
+}
+
+.screen {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+}
+
+.panel {
+    width: min(560px, 92vw);
+    background: radial-gradient(120% 120% at 50% 0%, #141420, #0f0f16);
+    border-radius: 20px;
+    padding: clamp(24px, 5vw, 40px);
+    text-align: center;
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.05),
+        0 30px 80px rgba(0, 0, 0, 0.6);
+}
+
+h1 {
+    font-family: "Space Mono", monospace;
+    font-size: clamp(1.4rem, 4vw, 1.9rem);
+    letter-spacing: 0.14em;
+    margin-bottom: 20px;
+}
+
+.question {
+    font-size: clamp(0.9rem, 2.6vw, 1rem);
+    margin-bottom: 24px;
+    line-height: 1.5;
+    color: #cfcfe8;
+}
+
+form {
+    display: grid;
+    gap: 16px;
+}
+
+input {
+    padding: 12px 14px;
+    background: #0b0b12;
+    border: 1px solid #3a3a55;
+    border-radius: 10px;
+    color: white;
+    font-size: 0.95rem;
+    outline: none;
+}
+
+input:focus {
+    border-color: #f3e7b3;
+    box-shadow: 0 0 0 2px rgba(243, 231, 179, 0.2);
+}
+
+button {
+    padding: 12px;
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    background: transparent;
+    color: #f3e7b3;
+    border: 1px solid #f3e7b3;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.15s ease;
+}
+
+button:hover {
+    background: #f3e7b3;
+    color: #000;
+    transform: translateY(-1px);
+}
+
+/* .hint {
+    margin-top: 16px;
+    font-size: 0.75rem;
+    color: #8f8fb0;
+    letter-spacing: 0.08em;
+} */
+
+/* Phone refinement */
+
+@media (max-width: 600px) {
+    button {
+        width: 100%;
+    }
+}

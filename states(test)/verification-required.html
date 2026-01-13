@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Verification Required</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="verification.css" />
+</head>
+
+<body>
+
+    <main class="screen">
+        <div class="panel">
+            <h1>VERIFICATION REQUIRED</h1>
+
+            <p class="question">
+                Sample question?
+            </p>
+
+            <form id="verifyForm">
+                <input type="text" placeholder="Enter authorization phrase" autocomplete="off" required />
+                <button type="submit">Initiate Override</button>
+            </form>
+
+            <!-- <p class="hint">Any response will be processed.</p> -->
+        </div>
+    </main>
+
+    <script>
+        const form = document.getElementById("verifyForm");
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            // Small delay for realism
+            setTimeout(() => {
+                if (typeof nextState === "function") {
+                    nextState();          // SPA mode
+                } else {
+                    console.log("Override initiated"); // standalone fallback
+                }
+            }, 300);
+        });
+    </script>
+
+</body>
+
+</html>
